@@ -1,22 +1,30 @@
-body {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #4b006e, #8e2de2);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
   }
   
   .game-container {
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 30px;
+    padding: 30px 20px;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 700px;
+    width: 100%;
   }
   
   h1 {
@@ -26,23 +34,20 @@ body {
   
   .flags {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px;
-    justify-content: center;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
   }
   
   .flags img {
     width: 100%;
     height: auto;
-    aspect-ratio: 3/2;
+    aspect-ratio: 4/3;
     object-fit: cover;
     border: 3px solid transparent;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
   }
   
   .flags img:hover {
@@ -53,14 +58,15 @@ body {
   .feedback {
     font-size: 20px;
     margin-bottom: 20px;
+    min-height: 24px;
   }
   
   button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 18px;
     background-color: #ff5f6d;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     color: white;
     cursor: pointer;
     transition: background 0.3s;
@@ -72,4 +78,15 @@ body {
   
   .hidden {
     display: none;
+  }
+  
+  /* Responsividade extra */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 20px;
+    }
+  
+    button {
+      width: 100%;
+    }
   }
